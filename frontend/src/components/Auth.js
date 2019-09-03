@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Refresh from './Refresh';
+import NavigationBar from './NavigationBar';
 import axios from 'axios';
-import { Alert, Button, FormGroup, FormLabel, FormControl, Navbar, Nav } from 'react-bootstrap'
+import { Alert, Button, FormGroup, FormLabel, FormControl, Nav } from 'react-bootstrap'
 
 class Auth extends Component {
     state = {
@@ -94,25 +95,17 @@ class Auth extends Component {
         const loggedIn = () => {
             return (
                 <React.Fragment>
-                    <Navbar bg="light" expand="lg">
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="mr-auto">
-                                <Nav.Link as={Link} to={{
-                                    pathname: "/jobs",
-                                    state: { jobs: this.props.jobs }
-                                }}>Home</Nav.Link>
-                                <Nav.Link as={Link} to="/about">About</Nav.Link>
-                            </Nav>
-                        </Navbar.Collapse>
-                        <Button variant="outline-danger" onClick={this.logOut}>Log Out</Button>
-                    </Navbar>
+                    <NavigationBar 
+                    jobs={this.props.jobs}
+                    logOut={this.logOut}
+                    />
                     {this.state.successAlert && <Alert
                         key={1}
                         variant="success"
                     >
                         Success!
                     </Alert>}
+                    <p />
                     <Refresh refresh={this.props.refresh} />
                     <Redirect
                         to={{
@@ -153,10 +146,10 @@ class Auth extends Component {
                             type="submit"
                         >
                             Login
-                            </Button>
+                        </Button>
                         <Nav.Link as={Link} to='/register'>
                             Register
-                                </Nav.Link>
+                        </Nav.Link>
                     </form>
                     <Redirect to='/' />
                 </div>
