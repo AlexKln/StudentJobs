@@ -7,11 +7,21 @@ services:
     volumes:
       - ./backend:/usr/src/app
     ports:
+<<<<<<< HEAD
       - 80:80
+=======
+      - 5001:80
+    expose:
+      - 5001
+>>>>>>> 6824201146c555b2b9f785bc60bef79097de8f66
   frontend:
     container_name: frontend
     build: ./frontend
     depends_on:
       - backend
     ports:
+<<<<<<< HEAD
       - 5000:5000
+=======
+      - 5000:80
+>>>>>>> 6824201146c555b2b9f785bc60bef79097de8f66
