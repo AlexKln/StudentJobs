@@ -16,12 +16,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://127.0.0.1:5000/').then(res => this.setState({ jobs: res.data }))
+    axios.get('http://' + process.env.REACT_APP_HOST_URL + '/').then(res => this.setState({ jobs: res.data }))
   }
 
   // refresh
   refresh = (title) => {
-    axios.post('https://jsonplaceholder.typicode.com/todos', {
+    axios.post('https://tobeimplemented', {
       title,
       completed: false
     })
@@ -49,9 +49,9 @@ class App extends Component {
                     variant="primary"
                   >
                     <span style={alertStyle}>
-                    Log in or register to display jobs please
+                      Log in or register to display jobs please
                     </span>
-                    </Alert>
+                  </Alert>
                 </center>
                 {/* <Refresh refresh = {this.refresh}/>
             <Jobs jobs={this.state.jobs}/> */}

@@ -15,7 +15,7 @@ class Auth extends Component {
 
     componentDidMount() {
         const AuthStr = 'Bearer ' + this.getToken()
-        axios.get('http://127.0.0.1:5000/validate',
+        axios.get('http://' + process.env.REACT_APP_HOST_URL + '/validate',
             { 'headers': { 'Authorization': AuthStr } })
             .then(res => this.setState({ isLoggedIn: true })
             )
@@ -52,7 +52,7 @@ class Auth extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post('http://127.0.0.1:5000/login', {
+        axios.post('http://' + process.env.REACT_APP_HOST_URL + '/login', {
             username: this.state.user,
             password: this.state.password
         })

@@ -22,7 +22,7 @@ class Register extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    axios.post('http://127.0.0.1:5000/register', {
+    axios.post('http://' + process.env.REACT_APP_HOST_URL + '/register', {
       username: this.state.user,
       password: this.state.password
     })
