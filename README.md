@@ -1,6 +1,6 @@
 # Work in progress
 
-run with:  
+run from root folder with:  
 docker-compose up  
 runs on port 80 - http://localhost
 
