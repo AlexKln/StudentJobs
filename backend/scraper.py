@@ -1,4 +1,5 @@
 import bs4 as bs
+import threading
 from models import Job, User, JobSchema
 import urllib.request
 import urllib.parse as urlparse
