@@ -21,7 +21,7 @@ class App extends Component {
 
   // refresh
   refresh = (title) => {
-    axios.post('https://tobeimplemented', {
+    axios.post('https://tobe.implemented', {
       title,
       completed: false
     })
