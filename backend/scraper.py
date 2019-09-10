@@ -72,3 +72,8 @@ class Scraper:
             job.save_to_db()
 
         # self.db.session.commit()
+
+    def activate(self):
+        t = threading.Thread(name='scraper', target=self.scrape)
+        t.daemon = True
+        t.start()

@@ -5,7 +5,7 @@ from scraper import Scraper
 api = Api(app)
 
 scraper = Scraper(db)
-scraper.scrape()
+scraper.activate()  # Scraping on diff thread for faster launchtime
 
 import models, resources
 
