@@ -5,6 +5,6 @@
 
 ## Back End
 * add scraping logic for more websites - [scraper.py](backend/scraper.py):
-  * Indeed
-  * Drushim
+  * ~~Indeed~~ - [ChenOst](pull/7)
+  * ~~Drushim~~ - [ChenOst](pull/7)
   * Nisha
