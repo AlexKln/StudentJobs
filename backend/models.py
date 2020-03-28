@@ -11,7 +11,10 @@ class Job(db.Model):
     location = db.Column(db.String, unique=False, nullable=False)
 
     def save_to_db(self):
-        if (not Job.query.filter_by(company=self.company, title=self.title).first()): # Same position on different websites
+        if (
+            not Job.query.filter_by(
+                company=self.company, title=self.title).first()
+        ):  # Same position on different websites
             db.session.add(self)
             db.session.commit()
 
@@ -50,7 +53,7 @@ class User(db.Model):
             num_rows_deleted = db.session.query(cls).delete()
             db.session.commit()
             return {'message': '{} row(s) deleted'.format(num_rows_deleted)}
-        except:
+        except Exception:
             return {'message': 'Something went wrong'}
 
     @staticmethod

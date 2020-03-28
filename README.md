@@ -8,6 +8,11 @@ runs on port 80 - http://localhost
 
 ![](screenshots/2.gif)
 
+
+run linter (flake8)
+
+`docker run --rm studentjobs_backend bash -c "flake8"`
+
 ## Contributing to the project
 
 Anybody is more than welcome to create PR if you want to contribute to the
