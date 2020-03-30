@@ -1,6 +1,7 @@
 aniso8601==7.0.0
 beautifulsoup4==4.8.0
 Click==7.0
+flake8==3.7.9
 Flask==1.1.1
 Flask-Cors==3.0.8
 Flask-JWT-Extended==3.21.0

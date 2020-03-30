@@ -1,13 +1,14 @@
 from flask_restful import Resource, Api
 from app import app, db
 from scraper import Scraper
+import models
+import resources
 
 api = Api(app)
 
 scraper = Scraper(db)
 scraper.activate()  # Scraping on diff thread for faster launchtime
 
-import models, resources
 
 class Home(Resource):
     def get(self):
@@ -16,11 +17,6 @@ class Home(Resource):
         output = job_schema.dump(jobs).data
         return output
 
-
-# @app.route('/path/<path:subpath>')
-# def show_subpath(subpath):
-#     # show the subpath after /path/
-        # return 'Subpath %s' % escape(subpath)
 
 api.add_resource(Home, '/')
 api.add_resource(resources.UserRegistration, '/register')
