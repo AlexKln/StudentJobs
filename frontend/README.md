@@ -66,3 +66,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### 'running without docker'
+steps:
+1.control + shift + p
+2.select python interpeter(need to have venv in name)
+3.open another cmd console(not bash and powershell)
+4.to run the backend:python ./../backend/api.py
